@@ -1,0 +1,376 @@
+/* Variáveis para cores */
+:root {
+--color-primary: #FF69B4; /* Rosa Choque/Pink - Cor de destaque (Header, Bordas, Ícones) */
+--color-secondary: #121212; /* Preto Profundo - Cor de fundo principal (Dark Mode) */
+--color-tertiary: #00FFFF; /* Ciano Elétrico/Aqua - Cor de destaque secundária (Role, Títulos) */
+--color-quaternary: #4B0082; /* Roxo Índigo Escuro - Cor para inputs/elementos sutis */
+--color-text-light: #F0F0F0; /* Texto claro (Branco Suave) */
+--color-text-dark: #333333; /* Texto escuro (usado em inputs claros) */
+--template-blue: #0A2E4D;
+--template-bg-blue: #092742; 
+--template-dark-blue: #061e33; 
+
+--font-family: 'Montserrat', sans-serif;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: #0d0d0d; /* Fundo geral da página (Preto ligeiramente mais claro) */
+display: flex;
+flex-direction: column; /* Necessário para alinhar main e footer */
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+font-family: var(--font-family);
+padding: 20px;
+}
+
+h2{
+color: var(--color-text-light);
+text-align: center;
+margin-bottom: 30px;
+}
+
+/* NOVO: Container principal para segurar as seções e permitir o slide */
+main {
+width: 100%;
+max-width: 420px; 
+position: relative; /* Pai para as sections absolutas */
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 500px; /* Garante que o container não encolha demais */
+}
+
+/* NOVO: Estilo base para as sections e controle de transição */
+.card-section, 
+.contact-section {
+width: 100%;
+position: absolute; /* Permite que uma section fique por cima da outra */
+top: 0;
+left: 0;
+transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; 
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra mais escura para o Dark Mode */
+overflow: hidden;
+background-image: url('design-corporativo-azul.png'); /* Mantenho a URL original para o card-section */
+}
+
+
+/* CLASSE DE VISIBILIDADE */
+.hidden {
+opacity: 0;
+pointer-events: none; /* Não permite interação quando escondido */
+transform: translateX(100%); /* Desliza para fora da tela (direita) */
+z-index: 1; 
+}
+
+/* CLASSE DE VISIBILIDADE */
+.visible {
+opacity: 1;
+pointer-events: auto;
+transform: translateX(0); /* Posição normal */
+z-index: 2; /* Sempre fica por cima */
+}
+
+/* --- Container Principal do Cartão --- */
+.card-container {
+width: 100%;
+/* max-width removido, pois .card-section controla isso */
+border-radius: 15px;
+overflow: hidden;
+/* box-shadow removido, pois .card-section controla isso */
+text-align: center;
+}
+
+/* --- Cabeçalho (Parte Superior - Pink Choque) --- */
+.card-header {
+background-color: var(--color-primary); /* Pink Choque */
+padding-top: 40px;
+padding-bottom: 80px; 
+color: var(--color-secondary); /* Texto em Preto Profundo */
+position: relative;
+z-index: 1;
+}
+
+.card-header h1 {
+font-size: 1.8em;
+font-weight: 700;
+margin-bottom: 20px;
+}
+
+/* --- Foto de Perfil --- */
+.profile-photo-wrapper {
+position: absolute;
+bottom: -60px; 
+left: 50%;
+transform: translateX(-50%);
+width: 120px;
+height: 120px;
+border-radius: 50%;
+background-color: var(--color-secondary); /* Fundo da foto em Preto Profundo */
+padding: 5px;
+z-index: 10;
+}
+
+.profile-photo {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+object-fit: cover;
+display: block;
+}
+
+/* --- Corpo (Parte Inferior - Preto Profundo) --- */
+.card-body {
+/*background-color: var(--color-secondary); substituído pela imagem e cor */
+background-image: url('design-corporativo-azul.png'); 
+background-color: var(--color-secondary); /* Garante o fundo Dark Mode se a imagem falhar */
+color: var(--color-text-light);
+padding-top: 80px; 
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.role {
+font-size: 1.2em;
+font-weight: 600;
+letter-spacing: 3px;
+margin-bottom: 30px;
+color: var(--color-tertiary); /* Ciano Elétrico */
+}
+
+/* --- Botões de Contato --- */
+.contact-buttons {
+display: flex;
+flex-direction: column;
+gap: 15px;
+padding-bottom: 40px;
+}
+
+.contact-btn {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+padding: 15px 20px;
+text-decoration: none;
+color: var(--color-text-light);
+border: 1px solid var(--color-primary); /* Pink Choque na borda */
+border-radius: 10px;
+font-size: 0.8em;
+font-weight: 600;
+letter-spacing: 1px;
+transition: background-color 0.3s, border-color 0.3s;
+padding-left: 50px;
+}
+
+.contact-btn i {
+margin-right: 15px;
+color: var(--color-primary); /* Pink Choque no ícone */
+font-size: 1.2em;
+width: 20px; 
+margin-left: -30px;
+}
+
+/* Efeito ao passar o mouse/tocar */
+.contact-btn:hover {
+background-color: var(--color-primary); /* Fundo em Pink Choque */
+color: var(--color-secondary); /* Texto em Preto Profundo */
+}
+
+.contact-btn:hover i {
+color: var(--color-secondary); /* Ícone em Preto Profundo */
+}
+
+/* ======================================= */
+/* Contact - Email (CORES E FORMS) */
+/* ======================================= */
+
+/* NOVO: Botão Voltar */
+.back-to-card-btn { 
+position: absolute;
+top: 20px;
+left: 20px;
+color: var(--color-secondary); /* Mudado para Preto Profundo para contraste no fundo rosa */
+text-decoration: none;
+font-size: 1em;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 5px;
+z-index: 11;
+transition: color 0.3s ease;
+}
+
+.back-to-card-btn:hover {
+color: var(--color-text-dark); /* Texto escuro para o hover */
+}
+
+.back-to-card-btn i {
+font-size: 1.2em;
+}
+
+.contact-form-container {
+width: 100%;
+background-color: var(--color-primary); /* Fundo do formulário em Pink Choque */
+padding: 30px;
+border-radius: 15px;
+position: relative; 
+box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4); /* Sombra interna mais suave para fundo claro */
+}
+
+.contact-form-container h2 {
+color: var(--color-tertiary); /* Título em Preto Profundo para contraste */
+padding-top: 40px; /* Espaço para o botão Voltar */
+}
+
+/* Estilização do Formulário */
+.contact-form .form-group {
+margin-bottom: 20px;
+}
+
+.contact-form label {
+display: block;
+text-align: left;
+color: var(--color-secondary); /* Labels em Preto Profundo */
+margin-bottom: 5px;
+font-size: 1rem;
+font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form input[type="subject"], /* Adicionado o input[type="subject"] */
+.contact-form textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid var(--color-secondary); /* Borda em Preto Profundo */
+border-radius: 5px;
+background-color: var(--template-dark-blue); /* Rosa claro no fundo do input */
+color: var(--color-text-light); /* Texto escuro no input */
+font-size: 1rem;
+box-sizing: border-box;
+}
+
+.contact-form textarea {
+resize: vertical; 
+}
+
+/* Estilização do Botão de Envio (SUBMIT - agora é <button type="submit">) */
+.contact-form button[type="submit"] {
+background-color: var(--color-tertiary); /* Fundo em Ciano Elétrico */
+color: var(--color-secondary); /* Texto em Preto Profundo */
+border: 1px solid var(--color-secondary); /* Borda em Preto Profundo */
+border-radius: 10px;
+padding: 12px 25px; /* Ajustado para melhor visualização */
+font-size: 1.1em;
+font-weight: 700; 
+cursor: pointer;
+letter-spacing: 1px;
+transition: background-color 0.3s ease, transform 0.1s ease;
+display: block; 
+margin: 30px auto 0 auto; 
+max-width: 200px; /* Ajustado para ser mais visível que 150px */
+}
+
+/* Efeito Hover (passar o mouse) */
+.contact-form button[type="submit"]:hover {
+background-color: var(--color-secondary); /* Fundo em Preto Profundo */
+color: var(--color-tertiary); /* Texto em Ciano Elétrico */
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito Active (clique) */
+.contact-form button[type="submit"]:active {
+transform: translateY(0);
+}
+
+
+/* ======================================= */
+/* MEDIA QUERIES (Responsividade) */
+/* ======================================= */
+
+/* Dispositivos maiores */
+@media (min-width: 468px) {
+main {
+max-width: 420px;
+}
+.card-header h1 {
+font-size: 2em;
+}
+}
+
+/* Tablets e Desktops pequenos */
+@media (min-width: 768px) {
+main {
+max-width: 480px; 
+}
+.card-body {
+padding-left: 40px;
+padding-right: 40px;
+}
+.contact-buttons {
+gap: 20px;
+}
+.contact-btn {
+padding: 18px 25px;
+font-size: 1.1em;
+padding-left: 60px;
+}
+.contact-btn i {
+margin-left: -35px;
+}
+.profile-photo-wrapper {
+width: 140px; 
+height: 140px;
+bottom: -70px;
+}
+.contact-form button[type="submit"] {
+max-width: 250px;
+}
+}
+
+.footer {
+    color: #f0f0f0;
+    padding: 1rem 4rem 0 4rem;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebras de linha em telas pequenas */
+    gap: 3rem;
+    margin-bottom: 30px;
+    margin-top: 0 !important;
+}
+
+.footer-email {
+    padding-left: 4%;
+}
+
+.footer-contacts {
+    padding-left: 10%;
+}
+
+.footer-social {
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-right: 10%;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    color: #f0f0f0;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}

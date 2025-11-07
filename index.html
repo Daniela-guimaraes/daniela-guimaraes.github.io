@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Digital - Daniela Guimarães - Desenvolvedora Web & Local</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // SUBSTITUA ESTE ID (G-XXXXXXXXXX) PELO SEU ID DE MEDIÇÃO REAL DO GA4
+      gtag('config', 'G-XXXXXXXXXX'); 
+    </script>
+    </head>
+<body>
+    <main>
+        <section class="card-section visible">
+            <div class="card-container">
+                <header class="card-header">
+                    <h1>Dani Guimarães</h1>
+                    <div class="profile-photo-wrapper">
+                        <img src="foto.jpg" alt="Foto de Sebastião Maciel" class="profile-photo">
+                    </div>
+                </header>
+                <div class="card-body">
+                    <p class="role">DESENVOLVEDORA WEB & LOCAL</p>
+                    <div class="contact-buttons">
+                        <a href="#" id="email-btn" class="contact-btn" data-type="EMAIL_FORM">
+                            <i class="fas fa-envelope"></i> E-MAIL
+                        </a>
+                        <a href="https://wa.me/55988138280?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Sr.%20Sebastião." target="_blank" class="contact-btn" data-type="WHATSAPP">
+                            <i class="fab fa-whatsapp"></i> WHATSAPP 
+                        </a>
+                        <a href="https://daniela-guimaraes.github.io/dani-guimaraes-portifolio" class="contact-btn" data-type="site">
+                            <i class="fas fa-briefcase"></i> PORTIFÓLIO
+                        </a>
+                        <a href="https://daniwebsolutions.com.br" class="contact-btn" data-type="site">
+                            <i class="fas fa-globe"></i> SITE DA EMPRESA
+                        </a>
+                        <a href="https://maps.app.goo.gl/HjyMpahp5h8rkDd87" target="_blank" class="contact-btn" data-type="LOCALIZACAO">
+                            <i class="fas fa-map-marker-alt"></i> LOCALIZAÇÃO
+                        </a>
+                    </div>
+                    <div class="footer footer-social">
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/daniguimaraes_dev?igsh=bGlsemV0b3ZvODNl" aria-label="Instagram" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                            <a href="https://youtube.com/@daniguimaraes.developer?si=6r7C7uwtbTi-hRM9" aria-label="YouTube" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
+                            <a href="https://www.tiktok.com/@danigcode?_t=ZM-90AXvotBev5&_r=1" aria-label="TikTok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://www.linkedin.com/in/dani-guimar%C3%A3es/" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/Daniela-guimaraes" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </section>
+        
+        <section class="contact-section hidden">
+            <div class="contact-form-container">
+                <a href="#" id="back-btn" class="back-to-card-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
+                
+                <h2>Fale comigo</h2>
+                <form action="https://formspree.io/f/meopojpr" method="POST" class="contact-form" id="meuFormulario"> 
+                    <div class="form-group"><label for="name">Nome Completo:</label><input type="text" id="name" name="name" required placeholder="Seu nome"></div>
+                    <div class="form-group"><label for="phone">Seu Telefone:</label><input type="tel" id="phone" name="phone" required placeholder="(XX) XXXXX-XXXX"></div>
+                    <div class="form-group"><label for="email">Seu Email:</label><input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com"></div>
+                    <div class="form-group"><label for="subject">Assunto:</label><input type="text" id="subject" name="subject" required placeholder="Orçamento, Dúvida, Suporte, etc."></div>
+                    <div class="form-group"><label for="message">Mensagem:</label><textarea id="message" name="message" rows="5" required placeholder="Detalhe sua necessidade aqui..."></textarea></div>
+                    
+                    <button type="submit" id="submit-btn">Enviar Mensagem</button> 
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
