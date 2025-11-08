@@ -58,7 +58,7 @@ transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 border-radius: 15px;
 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra mais escura para o Dark Mode */
 overflow: hidden;
-background-image: url('design-corporativo-azul.png'); /* Mantenho a URL original para o card-section */
+background-image: url('assets/design-corporativo-azul.png'); /* Mantenho a URL original para o card-section */
 }
 
 
@@ -129,7 +129,7 @@ display: block;
 /* --- Corpo (Parte Inferior - Preto Profundo) --- */
 .card-body {
 /*background-color: var(--color-secondary); substituído pela imagem e cor */
-background-image: url('design-corporativo-azul.png'); 
+background-image: url('assets/design-corporativo-azul.png'); 
 background-color: var(--color-secondary); /* Garante o fundo Dark Mode se a imagem falhar */
 color: var(--color-text-light);
 padding-top: 80px; 
